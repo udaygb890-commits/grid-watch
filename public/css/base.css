@@ -1,0 +1,139 @@
+/* GridWatch Base Design System & CSS Variables */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* Color Palette - Industrial Deep Slate (Photo 1 Style) */
+  --bg-darkest: #0B1118;
+  --bg-primary: #0E1622;
+  --bg-surface: #121B26;
+  --bg-card: #152232;
+  --bg-card-hover: #1A293D;
+  --bg-elevated: #1F3047;
+
+  /* Electric Accents */
+  --cyan-neon: #00F0FF;
+  --cyan-bright: #38BDF8;
+  --cyan-dim: #0284C7;
+  --cyan-glow: rgba(0, 240, 255, 0.3);
+  --cyan-glow-subtle: rgba(0, 240, 255, 0.08);
+
+  --blue-electric: #0070F3;
+  --blue-deep: #0040A8;
+
+  /* Status Tokens */
+  --status-critical: #FF334B;
+  --status-critical-bg: rgba(255, 51, 75, 0.12);
+  --status-critical-border: rgba(255, 51, 75, 0.35);
+
+  --status-warning: #FFB300;
+  --status-warning-bg: rgba(255, 179, 0, 0.12);
+  --status-warning-border: rgba(255, 179, 0, 0.35);
+
+  --status-success: #00E676;
+  --status-success-bg: rgba(0, 230, 118, 0.12);
+  --status-success-border: rgba(0, 230, 118, 0.35);
+
+  --status-info: #38BDF8;
+  --status-info-bg: rgba(56, 189, 248, 0.12);
+  --status-info-border: rgba(56, 189, 248, 0.35);
+
+  /* Typography */
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-cyan: #7DD3FC;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Rajdhani', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Borders & Shadows */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-cyan: rgba(0, 240, 255, 0.25);
+  --border-focus: #00F0FF;
+
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-elevated: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 240, 255, 0.1);
+  --shadow-glow: 0 0 25px rgba(0, 240, 255, 0.25);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-darkest);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan-dim);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--cyan-bright);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--cyan-neon);
+  text-decoration: underline;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+/* Accessibility Focus Ring */
+:focus-visible {
+  outline: 2px solid var(--cyan-neon);
+  outline-offset: 2px;
+}

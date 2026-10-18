@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <defs>
+    <linearGradient id="gw-cyan-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2DD4BF" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="gw-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+  </defs>
+
+  <!-- High Voltage Bolt / Transformer Shield Symbol -->
+  <g transform="translate(6, 6)">
+    <!-- Shield Outline -->
+    <path d="M18 2 L32 7 V19 C32 28 18 34 18 34 C18 34 4 28 4 19 V7 Z" fill="#131F2E" stroke="#1E2E42" stroke-width="2"/>
+    <!-- Electric Bolt -->
+    <path d="M20 7 L11 20 H18 L16 29 L25 16 H18 Z" fill="url(#gw-gold)"/>
+  </g>
+
+  <!-- Typography: GRID (White) WATCH (Amber/Orange) -->
+  <text x="48" y="27" font-family="'Inter', -apple-system, sans-serif" font-size="20" font-weight="800" letter-spacing="1.2" fill="#FFFFFF">
+    GRID<tspan fill="#F59E0B">WATCH</tspan>
+  </text>
+  <text x="49" y="38" font-family="'Inter', -apple-system, sans-serif" font-size="7.5" font-weight="600" letter-spacing="1.8" fill="#7E8E9B">
+    AI PREDICTIVE MAINTENANCE
+  </text>
+</svg>

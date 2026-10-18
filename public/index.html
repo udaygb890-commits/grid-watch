@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GridWatch — AI-Powered Transformer Maintenance & Role-Based Security</title>
+  <meta name="description" content="GridWatch predictive maintenance platform designed to detect anomalies in electrical transformers and prevent power equipment failures. Secure role-based authentication.">
+  <meta name="theme-color" content="#070B14">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core & Component Stylesheets -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/grid-effects.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/dashboards.css">
+  <link rel="stylesheet" href="/css/mobile-view.css">
+</head>
+<body>
+  <!-- Ambient High-Voltage Electrical Grid Background -->
+  <div class="grid-backdrop" aria-hidden="true">
+    <div class="grid-mesh"></div>
+    <div class="grid-scanline"></div>
+  </div>
+
+  <!-- Primary Application Container -->
+  <div id="app">
+    <!-- View rendered dynamically by Router -->
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Application Logic Modules -->
+  <script src="/js/components/toast.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/components/demoBar.js"></script>
+  <script src="/js/views/loginView.js"></script>
+  <script src="/js/views/mobileView.js"></script>
+  <script src="/js/views/adminView.js"></script>
+  <script src="/js/views/controlRoomView.js"></script>
+  <script src="/js/views/stationOperatorView.js"></script>
+  <script src="/js/views/fieldEngineerView.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

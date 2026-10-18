@@ -1,0 +1,440 @@
+/* GridWatch Minimal Clean Role Selection & Login Page */
+/* Style strictly based on reference screenshot */
+
+:root {
+  --gw-bg: #0D1117;
+  --gw-card-bg: #151C24;
+  --gw-card-hover: #1A232E;
+  --gw-border: #29323D;
+  --gw-border-focus: #388BFD;
+  --gw-text-primary: #F0F6FC;
+  --gw-text-secondary: #8B949E;
+  --gw-text-muted: #6E7681;
+  --gw-accent-gold: #E5A93C;
+  --gw-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Hide any global ambient neon/scanlines on the role selection page */
+body {
+  background-color: var(--gw-bg) !important;
+  color: var(--gw-text-primary);
+  font-family: var(--gw-font-sans);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.grid-backdrop {
+  display: none !important;
+}
+
+/* ========================================================
+   1. Slim Header
+   - Horizontal alignment, thin bottom border
+   - GRIDWATCH (GRID in light grey, WATCH in muted gold)
+   - "Login" label on right
+   ======================================================== */
+.gw-header {
+  width: 100%;
+  height: 58px;
+  background-color: var(--gw-bg);
+  border-bottom: 1px solid var(--gw-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.gw-header-left {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.gw-brand-text {
+  font-family: var(--gw-font-sans);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.gw-brand-grid {
+  color: #E6EDF3;
+}
+
+.gw-brand-watch {
+  color: var(--gw-accent-gold);
+}
+
+.gw-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gw-header-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gw-text-secondary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+  background: transparent;
+  border: none;
+  padding: 4px 8px;
+}
+
+.gw-header-link:hover {
+  color: var(--gw-text-primary);
+}
+
+/* ========================================================
+   2. Main Content Container
+   - Centered container, max-width ~700px
+   - Generous top spacing
+   - 24-32px margins on mobile
+   ======================================================== */
+.gw-page-wrapper {
+  min-height: calc(100vh - 58px);
+  background-color: var(--gw-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 64px 28px 80px 28px;
+  box-sizing: border-box;
+}
+
+.gw-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ========================================================
+   3. Heading & Subtitle
+   ======================================================== */
+.gw-title-group {
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.gw-main-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--gw-text-primary);
+  letter-spacing: -0.5px;
+  margin: 0 0 8px 0;
+  line-height: 1.25;
+}
+
+.gw-subtitle {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--gw-text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ========================================================
+   4. Role Cards List (Vertically Stacked)
+   - Order: Admin, Control Room, Substation Team
+   - 16-20px spacing
+   - Rounded corners ~12px, 1px subtle border #29323D
+   - Never side-by-side
+   ======================================================== */
+.gw-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.gw-role-card {
+  width: 100%;
+  background-color: var(--gw-card-bg);
+  border: 1px solid var(--gw-border);
+  border-radius: 12px;
+  padding: 24px 24px;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.gw-role-card:hover {
+  background-color: var(--gw-card-hover);
+  border-color: #3D4856;
+}
+
+.gw-role-card:focus-visible {
+  outline: 2px solid var(--gw-border-focus);
+  outline-offset: 2px;
+}
+
+.gw-role-card-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--gw-text-primary);
+  margin: 0 0 6px 0;
+  letter-spacing: -0.2px;
+}
+
+.gw-role-card-desc {
+  font-size: 14.5px;
+  font-weight: 400;
+  color: var(--gw-text-secondary);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* ========================================================
+   5. Selected Role Login Form Card
+   ======================================================== */
+.gw-login-card {
+  width: 100%;
+  background-color: var(--gw-card-bg);
+  border: 1px solid var(--gw-border);
+  border-radius: 12px;
+  padding: 28px 28px 32px 28px;
+  box-sizing: border-box;
+}
+
+.gw-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gw-text-secondary);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-bottom: 24px;
+  transition: color 0.15s ease;
+}
+
+.gw-back-link:hover {
+  color: var(--gw-text-primary);
+}
+
+.gw-form-group {
+  margin-bottom: 20px;
+}
+
+.gw-label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--gw-text-primary);
+  margin-bottom: 8px;
+}
+
+.gw-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.gw-input {
+  width: 100%;
+  background-color: var(--gw-bg);
+  border: 1px solid var(--gw-border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--gw-text-primary);
+  font-family: inherit;
+  font-size: 14.5px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.gw-input:focus {
+  border-color: var(--gw-border-focus);
+}
+
+.gw-input::placeholder {
+  color: var(--gw-text-muted);
+  font-size: 13.5px;
+}
+
+.gw-input-password {
+  padding-right: 44px;
+}
+
+.gw-pwd-toggle-btn {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--gw-text-secondary);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gw-pwd-toggle-btn:hover {
+  color: var(--gw-text-primary);
+}
+
+.gw-pwd-toggle-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.gw-form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+
+.gw-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gw-text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.gw-checkbox-label input[type="checkbox"] {
+  accent-color: var(--gw-accent-gold);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+/* Primary Login Button */
+.gw-btn-submit {
+  width: 100%;
+  height: 44px;
+  background-color: #21262D;
+  border: 1px solid #363E48;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gw-btn-submit:hover {
+  background-color: #29323D;
+  border-color: #485464;
+}
+
+.gw-btn-submit:active {
+  background-color: #1C222A;
+}
+
+.gw-btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Error / Warning Alert Banner */
+.gw-alert-banner {
+  background-color: rgba(248, 81, 73, 0.12);
+  border: 1px solid rgba(248, 81, 73, 0.35);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #FF7B72;
+  font-size: 13.5px;
+  line-height: 1.45;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Quick Fill Demo Bar */
+.gw-demo-helper {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gw-border);
+}
+
+.gw-demo-header {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gw-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gw-demo-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gw-demo-chip {
+  background-color: var(--gw-bg);
+  border: 1px solid var(--gw-border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: var(--gw-text-secondary);
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.gw-demo-chip:hover {
+  color: var(--gw-text-primary);
+  border-color: #3D4856;
+  background-color: #161D26;
+}
+
+.gw-demo-chip strong {
+  color: var(--gw-text-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .gw-header {
+    padding: 0 20px;
+  }
+
+  .gw-page-wrapper {
+    padding: 40px 20px 60px 20px;
+  }
+
+  .gw-main-title {
+    font-size: 26px;
+  }
+
+  .gw-role-card {
+    padding: 20px 20px;
+  }
+
+  .gw-login-card {
+    padding: 22px 20px;
+  }
+}

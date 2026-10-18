@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment variables & credentials
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Production Build
+dist/
+dist-ssr/
+dist-ssr-components/
+dist-ssr-test/
+
+# Scratch & temporary test directories
+scratch/
+.tempmediaStorage/
+.user_uploaded/
+
+# External clones & submodules
+IBM-Datathon/
+
+# Database files
+server/db/*.sqlite-journal
+server/db/*.db-journal
+*.db-wal
+*.db-shm
+data/*.db-wal
+data/*.db-shm
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
